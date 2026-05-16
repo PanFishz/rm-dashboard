@@ -324,8 +324,8 @@ export default function Home() {
 
         {/* 8 · Email tag */}
         <a
-          href="mailto:rin@meyers.studio"
-          aria-label="Email Rin Meyers — rin@meyers.studio"
+          href="mailto:r.meyers.in@gmail.com"
+          aria-label="Email Rin Meyers — r.meyers.in@gmail.com"
           className="cork-item"
           style={{
             "--rot": "1deg",
@@ -343,7 +343,7 @@ export default function Home() {
               say hi?
             </div>
             <div style={{ fontFamily: F.mono, fontSize: 10, color: "#6b5a3e", letterSpacing: "0.06em" }}>
-              rin@meyers.studio
+              r.meyers.in@gmail.com
             </div>
           </div>
           <span style={{ fontSize: 22 }} aria-hidden="true">✉</span>
