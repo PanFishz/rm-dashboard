@@ -173,7 +173,7 @@ export default function Home() {
         <div
           aria-hidden="true"
           style={{
-            position: "absolute", top: 220, left: 30,
+            position: "absolute", top: 220, left: 14,
             transform: "rotate(-4deg)",
             width: 130, height: 130,
             background: "#ffeb6e", padding: 14,
