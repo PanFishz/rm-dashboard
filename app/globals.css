@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+/* Cork-item interactive states — composes with per-item --rot custom property */
+.cork-item {
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 180ms ease-out, box-shadow 180ms ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+.cork-item:hover {
+  transform: rotate(var(--rot, 0deg)) translateY(-2px);
+}
+.cork-item:active {
+  transform: rotate(var(--rot, 0deg)) scale(0.97);
+  transition-duration: 80ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cork-item,
+  .cork-item:hover,
+  .cork-item:active {
+    transform: rotate(var(--rot, 0deg));
+    transition: none;
+  }
 }

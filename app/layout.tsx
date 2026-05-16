@@ -1,8 +1,27 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { DM_Serif_Display, Caveat, IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"] });
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+});
+const caveat = Caveat({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-caveat",
+});
+const ibmPlex = IBM_Plex_Mono({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-ibm-plex",
+});
+const spaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
 
 export const metadata: Metadata = {
   title: "Rin Meyers — Projects",
@@ -11,8 +30,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.className} h-full`}>
-      <body className="min-h-full bg-gray-950 text-white antialiased">{children}</body>
+    <html
+      lang="en"
+      className={`${dmSerif.variable} ${caveat.variable} ${ibmPlex.variable} ${spaceGrotesk.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }
