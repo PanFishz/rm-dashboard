@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html, body {
+  background: #a87149;
+}
+
 /* Cork-item interactive states — composes with per-item --rot custom property */
 .cork-item {
   transform: rotate(var(--rot, 0deg));

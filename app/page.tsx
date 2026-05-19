@@ -332,7 +332,7 @@ export default function Home() {
               className="cork-item"
               style={{
                 "--rot": "-5deg",
-                position: "absolute", top: 390, left: 18,
+                position: "absolute", top: 370, left: 13,
                 width: 182, height: 182,
                 display: "block", textDecoration: "none",
               } as CSSProperties}
