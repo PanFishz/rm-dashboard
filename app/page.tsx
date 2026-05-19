@@ -241,7 +241,7 @@ export default function Home() {
         <div
           aria-hidden="true"
           style={{
-            position: "absolute", top: 410, left: 18,
+            position: "absolute", top: 670, left: 28,
             transform: "rotate(6deg)",
             width: 180,
             background: "#fff8e4", padding: "12px 14px",
@@ -331,12 +331,11 @@ export default function Home() {
               aria-label="Kitty Cafe — roguelite diner dash"
               className="cork-item"
               style={{
-                all: "unset" as CSSProperties["all"],
-                cursor: "pointer",
-                position: "absolute", top: 670, left: 28,
-                width: 182, height: 182, transform: "rotate(-5deg)",
-                display: "block",
-              }}
+                "--rot": "-5deg",
+                position: "absolute", top: 390, left: 18,
+                width: 182, height: 182,
+                display: "block", textDecoration: "none",
+              } as CSSProperties}
             >
               <Pin color="red" top={2} left="46%" />
               {/* outer white burst — die-cut border */}
@@ -371,7 +370,7 @@ export default function Home() {
         <div
           aria-hidden="true"
           style={{
-            position: "absolute", top: 672, left: 190,
+            position: "absolute", top: 380, left: 178,
             transform: "rotate(-6deg)",
             fontFamily: F.hand, fontSize: 16, color: "#fff8e4",
             textShadow: "0 1px 2px rgba(0,0,0,0.3)",
