@@ -35,4 +35,11 @@ export const projects: Project[] = [
     gradient: "from-amber-400 via-orange-500 to-red-500",
     emoji: "🃏",
   },
+  {
+    name: "Kitty Cafe",
+    url: "https://www.kittycafe.rinmeyers.com",
+    description: "Cats and coffee — a cozy café experience.",
+    gradient: "from-pink-400 via-rose-400 to-pink-500",
+    emoji: "🐱",
+  },
 ];

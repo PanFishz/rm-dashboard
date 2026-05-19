@@ -29,6 +29,17 @@ const F = {
   sans:   "var(--font-space-grotesk), 'Space Grotesk', sans-serif",
 };
 
+// 16-point starburst — outer R=50%, inner r=38%, starting at top (270°), step 22.5°
+const BURST_POLY = "polygon(50% 0%, 57% 13%, 69% 4%, 71% 18%, 85% 15%, 82% 29%, 96% 31%, 87% 43%, 100% 50%, 87% 57%, 96% 69%, 82% 71%, 85% 85%, 71% 82%, 69% 96%, 57% 87%, 50% 100%, 43% 87%, 31% 96%, 29% 82%, 15% 85%, 18% 71%, 4% 69%, 13% 57%, 0% 50%, 13% 43%, 4% 31%, 18% 29%, 15% 15%, 29% 18%, 31% 4%, 43% 13%)";
+
+const PROJECTS = [
+  { id: 'locate',  title: 'Locate an Image', emoji: '📍', short: 'where was this photo taken?', color: '#ff8a76', color2: '#ffc6cd', ink: '#5a1a26', year: '2025' },
+  { id: 'wander',  title: 'Wanderlist',       emoji: '✈️', short: 'plan · track · roam',         color: '#3ddc97', color2: '#aef3cf', ink: '#0e3d28', year: '2024' },
+  { id: 'wordual', title: 'Wordual',           emoji: '📝', short: 'vocabulary duels',            color: '#a07bff', color2: '#d9cbff', ink: '#28194d', year: '2024' },
+  { id: 'poker',   title: 'Team Poker',        emoji: '🃏', short: 'bring your friends. all in.', color: '#ff8a3d', color2: '#ffd9a8', ink: '#5e2a0c', year: '2023' },
+  { id: 'kitty',   title: 'Kitty Cafe',        emoji: '🐱', short: 'roguelite diner dash',        color: '#ff9ec4', color2: '#ffe0ec', ink: '#5a1f3e', year: '2026' },
+];
+
 export default function Home() {
   return (
     <main
@@ -91,12 +102,12 @@ export default function Home() {
             flexShrink: 0,
           }}
         >
-          04 PINNED
+          05 PINNED
         </div>
       </header>
 
       {/* CORK SURFACE */}
-      <div style={{ position: "relative", height: 920, margin: "0 12px" }}>
+      <div style={{ position: "relative", height: 1060, margin: "0 12px" }}>
 
         {/* 1 · Polaroid — Locate an Image */}
         <a
@@ -309,11 +320,72 @@ export default function Home() {
           </div>
         </a>
 
-        {/* 7 · Doodled arrow — decorative */}
+        {/* 7 · Kitty Cafe — pink starburst sticker */}
+        {(() => {
+          const C = PROJECTS[4];
+          return (
+            <a
+              href="https://www.kittycafe.rinmeyers.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Kitty Cafe — roguelite diner dash"
+              className="cork-item"
+              style={{
+                all: "unset" as CSSProperties["all"],
+                cursor: "pointer",
+                position: "absolute", top: 670, left: 28,
+                width: 182, height: 182, transform: "rotate(-5deg)",
+                display: "block",
+              }}
+            >
+              <Pin color="red" top={2} left="46%" />
+              {/* outer white burst — die-cut border */}
+              <div style={{
+                position: "absolute", inset: 0,
+                background: "#fff", clipPath: BURST_POLY,
+                filter: "drop-shadow(0 10px 14px rgba(0,0,0,0.28))",
+              }} />
+              {/* inner colored burst */}
+              <div style={{
+                position: "absolute", inset: 8,
+                background: `linear-gradient(160deg, ${C.color2} 0%, ${C.color} 100%)`,
+                clipPath: BURST_POLY,
+                display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center",
+                textAlign: "center", color: C.ink, padding: "0 22px",
+              }}>
+                <div style={{
+                  fontFamily: F.mono,
+                  fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase",
+                  opacity: 0.7, marginBottom: 1,
+                }}>★ new ★</div>
+                <div style={{ fontSize: 40, lineHeight: 1 }}>{C.emoji}</div>
+                <div style={{ fontFamily: F.serif, fontSize: 20, lineHeight: 0.95, marginTop: 2 }}>{C.title}</div>
+                <div style={{ fontFamily: F.hand, fontSize: 14, marginTop: 1, opacity: 0.85 }}>{C.short}</div>
+              </div>
+            </a>
+          );
+        })()}
+
+        {/* "← just shipped!" handwritten note */}
         <div
           aria-hidden="true"
           style={{
-            position: "absolute", top: 710, left: "30%",
+            position: "absolute", top: 672, left: 190,
+            transform: "rotate(-6deg)",
+            fontFamily: F.hand, fontSize: 16, color: "#fff8e4",
+            textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          ← just shipped!
+        </div>
+
+        {/* 8 · Doodled arrow — decorative */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute", top: 840, left: "30%",
             fontFamily: F.hand, fontSize: 18, color: "#fff8e4",
             transform: "rotate(-3deg)",
             textShadow: "0 1px 2px rgba(0,0,0,0.3)",
@@ -322,14 +394,14 @@ export default function Home() {
           more on the way →
         </div>
 
-        {/* 8 · Email tag */}
+        {/* 9 · Email tag */}
         <a
           href="mailto:r.meyers.in@gmail.com"
           aria-label="Email Rin Meyers — r.meyers.in@gmail.com"
           className="cork-item"
           style={{
             "--rot": "1deg",
-            position: "absolute", top: 760, left: 24, right: 24,
+            position: "absolute", top: 890, left: 24, right: 24,
             padding: 12,
             background: "#fff8e4", borderRadius: 10,
             boxShadow: "0 10px 18px rgba(0,0,0,0.2)",
