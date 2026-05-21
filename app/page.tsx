@@ -35,7 +35,7 @@ const BURST_POLY = "polygon(50% 0%, 57% 13%, 69% 4%, 71% 18%, 85% 15%, 82% 29%, 
 const PROJECTS = [
   { id: 'locate',  title: 'Locate an Image', emoji: '📍', short: 'where was this photo taken?', color: '#ff8a76', color2: '#ffc6cd', ink: '#5a1a26', year: '2025' },
   { id: 'wander',  title: 'Wanderlist',       emoji: '✈️', short: 'plan · track · roam',         color: '#3ddc97', color2: '#aef3cf', ink: '#0e3d28', year: '2024' },
-  { id: 'wordual', title: 'Wordual',           emoji: '📝', short: 'vocabulary duels',            color: '#a07bff', color2: '#d9cbff', ink: '#28194d', year: '2024' },
+  { id: 'worduel', title: 'Worduel',           emoji: '📝', short: 'vocabulary duels',            color: '#a07bff', color2: '#d9cbff', ink: '#28194d', year: '2024' },
   { id: 'poker',   title: 'Team Poker',        emoji: '🃏', short: 'bring your friends. all in.', color: '#ff8a3d', color2: '#ffd9a8', ink: '#5e2a0c', year: '2023' },
   { id: 'kitty',   title: 'Kitty Cafe',        emoji: '🐱', short: 'roguelite diner dash',        color: '#ff9ec4', color2: '#ffe0ec', ink: '#5a1f3e', year: '2026' },
 ];
@@ -196,12 +196,12 @@ export default function Home() {
           ☆ tap any of these to visit the project ↓
         </div>
 
-        {/* 4 · Dark sticker — Wordual */}
+        {/* 4 · Dark sticker — Worduel */}
         <a
           href="https://www.wordual.rinmeyers.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Wordual — a competitive vocabulary word game"
+          aria-label="Worduel — a competitive vocabulary word game"
           className="cork-item"
           style={{
             "--rot": "-3deg",
@@ -230,7 +230,7 @@ export default function Home() {
             ))}
           </div>
           <div style={{ fontFamily: F.serif, fontSize: 20, lineHeight: 1, textAlign: "center" }}>
-            Wordual 📝
+            Worduel 📝
           </div>
           <div style={{ fontFamily: F.hand, fontSize: 14, color: "#d9cbff", textAlign: "center", marginTop: 2 }}>
             vocab duels
