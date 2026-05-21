@@ -215,7 +215,7 @@ export default function Home() {
         >
           <Pin color="green" top={-5} left="46%" />
           <div style={{ display: "flex", gap: 3, marginBottom: 8, justifyContent: "center" }}>
-            {["W", "O", "R", "D", "U", "A", "L"].map((letter, i) => (
+            {["W", "O", "R", "D", "U", "E", "L"].map((letter, i) => (
               <div
                 key={i}
                 style={{
